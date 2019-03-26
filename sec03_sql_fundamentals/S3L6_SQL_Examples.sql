@@ -1,0 +1,68 @@
+------
+--  Aggregate Functions
+
+
+-- Count all rows in the table
+SELECT COUNT(*) FROM LOT_CARS;
+
+-- Count all values in a table column
+-- Note that this will not count
+-- rows with a null in the CONDITION_CD column
+SELECT COUNT(CONDITION_CD) FROM LOT_CARS;
+
+-- Count all distinct values in the MALE column
+SELECT COUNT(DISTINCT MAKE) FROM LOT_CARS;
+
+-- COUNT function, grouping by joined table columns
+-- and a column alias (QUANTITY) - Non-ANSI
+SELECT LT.MAKE, CT.DESCRIPTION, COUNT(*) AS QUANTITY 
+  FROM LOT_CARS LT, 
+       CONDITION_TBL CT
+WHERE LT.CONDITION_CD = CT.CONDITION_CD
+GROUP BY LT.MAKE, CT.DESCRIPTION
+ORDER BY LT.MAKE
+;
+
+-- COUNT function, grouping by joined table columns
+-- and a column alias (QUANTITY) - ANSI Natural Join
+SELECT MAKE, DESCRIPTION, COUNT(*) AS QUANTITY 
+  FROM LOT_CARS NATURAL JOIN CONDITION_TBL
+GROUP BY MAKE, DESCRIPTION
+ORDER BY MAKE
+;
+
+-- Minimum PRICE by MAKE
+SELECT MAKE, MIN(PRICE)
+  FROM LOT_CARS
+GROUP BY MAKE
+ORDER BY MAKE
+;
+
+-- Maximum PRICE by MAKE
+SELECT MAKE, MAX(PRICE)
+ FROM LOT_CARS
+GROUP BY MAKE
+ORDER BY MAKE
+;
+
+-- Average PRICE across each MAKE
+SELECT MAKE, AVG(PRICE)
+ FROM LOT_CARS
+GROUP BY MAKE
+ORDER BY MAKE
+;
+
+-- Total MILEAGE by MAKE
+SELECT MAKE, SUM(MILEAGE)
+ FROM LOT_CARS
+GROUP BY MAKE
+ORDER BY MAKE
+;
+
+-- Multiple functions 
+SELECT MAKE, MIN(PRICE),  MAX(PRICE), AVG(PRICE), SUM(MILEAGE)
+ FROM LOT_CARS
+GROUP BY MAKE
+ORDER BY MAKE
+;
+
