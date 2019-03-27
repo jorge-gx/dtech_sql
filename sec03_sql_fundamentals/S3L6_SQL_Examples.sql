@@ -10,7 +10,7 @@ SELECT COUNT(*) FROM LOT_CARS;
 -- rows with a null in the CONDITION_CD column
 SELECT COUNT(CONDITION_CD) FROM LOT_CARS;
 
--- Count all distinct values in the MALE column
+-- Count all distinct values in the MAKE column
 SELECT COUNT(DISTINCT MAKE) FROM LOT_CARS;
 
 -- COUNT function, grouping by joined table columns
