@@ -1,1 +1,1 @@
-*.sql text eol=lf
+*.sql diff
