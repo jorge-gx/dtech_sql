@@ -14,7 +14,9 @@ FROM LOT_CARS
 ;
 
 -- Concatenate using standard CONCAT function
-
+-- in Oracle, have to use concat twice -- see below
+select concat(concat(make, ' '), model) as car
+from lot_cars;
 
 -- Change column values to all UPPER CASE
 SELECT UPPER(MAKE)
