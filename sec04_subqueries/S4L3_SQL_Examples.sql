@@ -1,6 +1,9 @@
 --- 
 -- Correlated SubQuery
 ---
+
+-- list the cars of each make whose price is above the avg of that *make*
+
 SELECT *
 FROM LOT_CARS LC
 WHERE PRICE > (
