@@ -3,7 +3,6 @@
 ------
 
 
-
 -- Get Current Date
 SELECT SYSDATE FROM DUAL;
 
@@ -118,7 +117,3 @@ SELECT TO_CHAR(ADD_MONTHS(SYSDATE, 12), 'Dy, Mon DD, YYYY') FROM DUAL;
 -- String to Date
 SELECT TO_DATE('Dec 14, 2015', 'Mon DD, YYYY') FROM DUAL;
 SELECT TO_DATE('2015-12-14', 'YYYY-MM-DD') FROM DUAL;
-
-
-
-
