@@ -6,6 +6,8 @@ select * from rent_cars;
 select * from rentals;
 -- i have three occurences of actual rentals
 
+-- we can join by vin to get a combined look
+
 
 ---
 -- Inner join of RENT_CARS and RENTALS where VINs match
