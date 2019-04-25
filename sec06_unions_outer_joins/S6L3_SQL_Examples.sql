@@ -28,6 +28,26 @@ FROM RENT_CARS RC,
 WHERE RC.VIN = R.VIN
 ;
  
+/* another way to do INNER JOIN:  */
+SELECT RC.VIN, 
+       RC.MAKE, 
+       RC.MODEL, 
+       RC.MODEL_YEAR, 
+       RC.MILEAGE, 
+       RC.STATE, 
+       RC.TAG, 
+       RC.IN_OUT, 
+       R.RENTAL_ID, 
+       R.DT_OUT, 
+       R.DT_RETURN
+FROM RENT_CARS RC inner join RENTALS R on RC.VIN = R.VIN
+;
+/*
+-- HOWEVER,  this only displays the results that match
+-- we have two extra cars on rental_cars that are not in rentals
+-- to display all of the cars, we have to do an OUTER JOIN
+*/
+
 ---
 -- Left Outer Join 
 ---
