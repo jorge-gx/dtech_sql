@@ -1,2 +1,2 @@
 # dtech_sql
-DannyTech SQL course files
+sql exercises, following sql course by dannytech.net
