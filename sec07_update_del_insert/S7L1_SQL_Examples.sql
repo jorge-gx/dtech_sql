@@ -49,3 +49,6 @@ AND RC.IN_OUT <> 'O'
 ;
 
 -- 0 row(s) updated.
+
+/* commit */
+COMMIT;
